@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meliyke & Berat Davetiye</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Genel Sayfa Ayarları */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f3eceb; /* Arka plandaki hafif pudra/pembe tonu */
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Davetiye Kartı Konteyneri */
+        .card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 420px; /* Mobil ekran genişliği */
+            min-height: 100vh;
+            box-sizing: border-box;
+            padding: 40px 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Üst Kısımdaki Çiçekli Görsel Alanı */
+        .image-container {
+            width: 180px;
+            height: 180px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #fbf5f4;
+            /* Placeholder Çiçek Deseni (CSS ile basit temsil, kendi görselinizi ekleyebilirsiniz) */
+            border-radius: 4px;
+            background-image: linear-gradient(45deg, #fbc2eb 0%, #a6c1ee 100%); 
+            opacity: 0.8;
+        }
+
+        /* İsimler (Zarif El Yazısı Tipi) */
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #555555;
+            margin: 10px 0;
+            line-height: 1.2;
+            font-weight: 400;
+        }
+
+        /* Davet Metni */
+        .invitation-text {
+            font-size: 0.85rem;
+            color: #777777;
+            letter-spacing: 1.5px;
+            line-height: 1.8;
+            margin: 40px 0;
+            text-transform: uppercase;
+            padding: 0 10px;
+        }
+
+        /* Tarih Bölümü Çizgileri */
+        .date-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 85%;
+            border-top: 1px solid #eaeaea;
+            border-bottom: 1px solid #eaeaea;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .date-element {
+            font-size: 1.1rem;
+            color: #555555;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Ortadaki Siyah Yuvarlak Gün Alanı */
+        .date-day {
+            background-color: #2c2c2c;
+            color: #ffffff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Saat Bilgisi */
+        .time-section {
+            font-size: 1rem;
+            color: #444444;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Mekan Başlığı */
+        .venue-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #2c2c2c;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Adres Bilgisi */
+        .address-section {
+            font-size: 0.8rem;
+            color: #666666;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            max-width: 90%;
+            margin-bottom: 40px;
+        }
+
+        /* Konumu Görüntüle Butonu */
+        .map-button {
+            background-color: #2c2c2c;
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            padding: 14px 0;
+            width: 85%;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            margin-top: auto; /* Sayfa altına sabitlemeye yardımcı olur */
+            margin-bottom: 10px;
+            transition: background-color 0.2s ease;
+        }
+
+        .map-button:hover {
+            background-color: #444444;
+        }
+
+        /* Harita İkonu (Küçük Kırmızı Pin) */
+        .map-icon {
+            color: #ff4d4d;
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        
+        <img class="image-container" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 100 100'><rect width='100%' height='100%' fill='%23fbf5f4'/><text x='50%' y='55%' font-family='sans-serif' font-size='8' fill='%23ccc' text-anchor='middle'>Görsel Alanı</text></svg>" alt="Davetiye Çiçek">
+
+        <div class="names">
+            Nisa &<br>Üveys
+        </div>
+
+        <div class="invitation-text">
+            En güzel günümüzde sizleri<br>aramızda görmekten mutluluk<br>duyarız.
+        </div>
+
+        <div class="date-section">
+            <div class="date-element">Temmuz</div>
+            <div class="date-day">25</div>
+            <div class="date-element">2026</div>
+        </div>
+
+        <div class="time-section">
+            SAAT: 16.00
+        </div>
+
+        <div class="venue-title"></div>
+        
+        <div class="address-section">
+            Kocatepe, Şehir Parkı Caddesı no:10<br>
+            34045<br>
+            Bayrampaşa / İSTANBUL
+        </div>
+
+        <a href="https://maps.google.com" target="_blank" class="map-button">
+            <span class="map-icon">📍</span> KONUMU GÖRÜNTÜLE
+        </a>
+
+    </div>
+
+</body>
+</html>
